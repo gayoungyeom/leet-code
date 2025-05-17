@@ -4,6 +4,26 @@
  * @return {number}
  */
 
+//substring 활용
+var strStr = function(haystack, needle) {
+    const n = haystack.length;
+    const m = needle.length;
+    
+    if(n < m) return -1;
+    
+    for(let i = 0; i <= n - m; i++){
+        if(haystack.substring(i, m) === needle) return i;
+    }
+    
+    return -1;
+}
+
+
+//indexOf 활용
+var strStr = function(haystack, needle) {
+    return haystack.indexOf(needle);
+}
+
 //O(n*n)
 var strStr = function(haystack, needle) {
     haystack = haystack.split('');
